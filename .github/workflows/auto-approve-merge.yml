@@ -3,9 +3,9 @@ name: Auto Approve & Merge
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-  workflow_run:
-    workflows: ["*"]
-    types: [completed]
+  
+    
+    
 
 permissions:
   contents: write
@@ -14,7 +14,7 @@ permissions:
 jobs:
   auto-approve-merge:
     runs-on: ubuntu-latest
-    if: github.event.pull_request || github.event.workflow_run.conclusion == 'success'
+    
     steps:
       - name: Approve PR
         uses: hmarr/auto-approve-action@v3
